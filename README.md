@@ -75,4 +75,5 @@ To set up and run the project locally:
 
 ### URL Patterns
 - `/genre/` - Home page showing all collections.
+- `/genre/<id>/` - Detail view for a specific collection.
 - `/genre/register/` - User registration page.
