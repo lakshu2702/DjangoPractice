@@ -1,0 +1,28 @@
+{% extends "genre/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details Application</title>
+  </head>
+  <body>
+    {% block content %} 
+    <div class="container my-5">
+      <div class="row">
+        {% for pieceobj in collection.piece_set.all %}
+          <div class="col-md-3 mb-4">
+            <div class="card shadow h-100" style="width: 200px; height: 300px;">
+              <img src="{{ pieceobj.pieceCover }}" class="card-img-top" alt="Piece Cover" style="width: 200px; height: 300px; object-fit: cover;">
+              <div class="card-body">
+                <h5 class="card-title">{{ pieceobj.title }} - {{ pieceobj.artist }}</h5>
+                <p class="card-text">{{ pieceobj.typ }}<br>{{ pieceobj.year }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
